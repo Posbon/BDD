@@ -1,13 +1,12 @@
 package Data;
 
-
 import lombok.Value;
 
 import java.util.Random;
 
 public class DataHelper {
-    public static final String FIRST_ACCOUNT = "5559 0000 0000 0001";
-    public static final String SECOND_ACCOUNT = "5559 0000 0000 0002";
+    public static final String FIRST_ACCOUNT="5559 0000 0000 0001" ;
+    public static final String SECOND_ACCOUNT="5559 0000 0000 0002" ;
 
     private DataHelper() {
     }
@@ -19,17 +18,17 @@ public class DataHelper {
     }
 
 
-    public static TransferInfo getRandomValueTransferInfo(Integer maxValue, String fromCard) {
-        return new TransferInfo(new Random().nextInt(maxValue), fromCard);
+    public static TransferInfo getRandomValueTransferInfo(Integer maxValue,String fromCard) {
+        return new TransferInfo(new Random().nextInt(maxValue),fromCard);
     }
 
 
     public static TransferInfo getFirstTransferInfo() {
-        return new TransferInfo(3200, SECOND_ACCOUNT);
+        return new TransferInfo(2800, SECOND_ACCOUNT);
     }
 
     public static TransferInfo getSecondCTransferInfo() {
-        return new TransferInfo(6800, FIRST_ACCOUNT);
+        return new TransferInfo(4900, FIRST_ACCOUNT);
     }
 
     @Value
@@ -43,7 +42,7 @@ public class DataHelper {
     }
 
     public static AuthInfo getOtherAuthInfo(AuthInfo original) {
-        return new AuthInfo("vova", "qwerty321");
+        return new AuthInfo("ivan", "qwerty321");
     }
 
 
@@ -57,4 +56,3 @@ public class DataHelper {
     }
 
 }
-

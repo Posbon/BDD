@@ -1,11 +1,10 @@
-package Test;
+package test;
 
-import Data.DataHelper;
-import Page.LoginPage;
 import lombok.val;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
+import Data.DataHelper;
+import Page.LoginPage;
 
 class MoneyTransferTest {
     @Test
@@ -40,3 +39,4 @@ class MoneyTransferTest {
 
 
 }
+

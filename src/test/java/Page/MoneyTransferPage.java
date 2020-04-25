@@ -1,7 +1,6 @@
 package Page;
 
 import Data.DataHelper;
-import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -15,3 +14,4 @@ public class MoneyTransferPage {
     }
 
 }
+
