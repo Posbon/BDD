@@ -24,11 +24,11 @@ public class DataHelper {
 
 
     public static TransferInfo getFirstTransferInfo() {
-        return new TransferInfo(2800, SECOND_ACCOUNT);
+        return new TransferInfo(20000, SECOND_ACCOUNT);
     }
 
-    public static TransferInfo getSecondCTransferInfo() {
-        return new TransferInfo(4900, FIRST_ACCOUNT);
+    public static TransferInfo getSecondTransferInfo() {
+        return new TransferInfo(5400, FIRST_ACCOUNT);
     }
 
     @Value

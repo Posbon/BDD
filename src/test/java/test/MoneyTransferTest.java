@@ -36,7 +36,35 @@ class MoneyTransferTest {
         Assertions.assertEquals(originSecondCardValue - transferInfo.getAmount(), actualSecondCardBalance);
 
     }
+    @Test
+    void shouldTransferMoneyBetweenOwnCardsV2() {
 
+        val loginPage = new LoginPage();
+        loginPage.openLoginPage();
+
+        val authInfo = DataHelper.getAuthInfo();
+
+        val verificationPage = loginPage.validLogin(authInfo);
+
+        val verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+        val dashBoardPage = verificationPage.validVerify(verificationCode);
+
+        val originFirstCardValue = dashBoardPage.getFirstCardBalance();
+        val originSecondCardValue = dashBoardPage.getSecondCardBalance();
+
+        val moneyTransferPage = dashBoardPage.pushMakeDepositFirstAccount();
+
+        val transferInfo = DataHelper.getFirstTransferInfo();
+
+        val dashBoardPage2 = moneyTransferPage.setAmountAndCard(transferInfo);
+
+        val actualFirstCardBalance = dashBoardPage2.getFirstCardBalance();
+        val actualSecondCardBalance = dashBoardPage2.getSecondCardBalance();
+
+        Assertions.assertEquals(originFirstCardValue + transferInfo.getAmount(), actualFirstCardBalance);
+        Assertions.assertEquals(originSecondCardValue - transferInfo.getAmount(), actualSecondCardBalance);
+
+    }
 
 }
 
