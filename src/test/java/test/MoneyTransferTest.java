@@ -1,5 +1,6 @@
 package test;
 
+import com.sun.tools.javac.util.Assert;
 import lombok.val;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -54,7 +55,10 @@ class MoneyTransferTest {
 
         val moneyTransferPage = dashBoardPage.pushMakeDepositFirstAccount();
 
-        val transferInfo = DataHelper.getFirstTransferInfo();
+        val transferInfo = DataHelper.getSecondTransferInfo();
+
+        /*Assertions.assertTrue(originSecondCardValue > transferInfo.getAmount());
+        /Правильнее было бы сделать проверку на этом этапе*/
 
         val dashBoardPage2 = moneyTransferPage.setAmountAndCard(transferInfo);
 
@@ -62,6 +66,7 @@ class MoneyTransferTest {
         val actualSecondCardBalance = dashBoardPage2.getSecondCardBalance();
 
         Assertions.assertEquals(originFirstCardValue + transferInfo.getAmount(), actualFirstCardBalance);
+        Assertions.assertTrue(actualSecondCardBalance > 0);
         Assertions.assertEquals(originSecondCardValue - transferInfo.getAmount(), actualSecondCardBalance);
 
     }
