@@ -1,6 +1,5 @@
 package test;
 
-import com.sun.tools.javac.util.Assert;
 import lombok.val;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
